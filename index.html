@@ -2,423 +2,647 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="ZzdYCtGhKZntIn0InKNrZJbjXeUopJlzUjEfvfSIKZs" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Gyaniram & Sons | Poultry Farm Supplies</title>
 
+    <meta name="description" content="Gyaniram & Sons - Poultry farm supplies, gram-bhati, tarpaulin, poultry feeders and iron drums.">
 
-
-
-<style>
-.contact-button:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-    transition: 0.2s ease;
-}
-
-.contact-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #51df67;
-            color: #06090d;
-        }
-
-        /* NAVBAR */
-
-        nav {
-            height: 70px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-            color: #09090c;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #85a9e1;
-            margin-left: 25px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #4f46e5;
-        }
-
-        /* HOME */
-
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero h1 {
-            font-size: 58px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #4f46e5;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #121213;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 30px;
-            background: #4a42e2;
-            color: rgb(173, 232, 106);
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            background: #3730a3;
-        }
-
-        /* ABOUT + VIDEOS */
-
-        .section {
-            min-height: 500px;
-            padding: 80px 10%;
-            text-align: center;
-            background: rgb(116, 225, 136);
-        }
-
-        .section h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .section-intro {
-            color: #6b7280;
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-
-        /* VIDEO CARDS */
-
-        .video-container {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .video-card {
-            background: rgb(206, 237, 209);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(188, 183, 183, 0.08);
-            text-align: left;
-            transition: 0.3s;
-        }
-
-        .video-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .video-image {
-            height: 150px;
-            background: #37383a;
-            border-radius: 12px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .video-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .video-card p {
-            font-size: 15px;
-            color: #6b7280;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .watch-button {
-            display: inline-block;
-            padding: 10px 18px;
-            background: #43453f;
-            color: rgb(10, 177, 233);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .watch-button:hover {
-            background: #3730a3;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #5271ae;
-            background: rgb(241, 234, 234);
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .video-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            nav {
-                padding: 0 5%;
-            }
-
-            nav a {
-                margin-left: 10px;
-            }
-    </style>
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav-container">
 
-    <nav>
-
-        <div class="logo">😎YOYOAI</div>
-
-        <div>
-
-            <a href="#home">Home</a>
-
-            <a href="#about">About</a>
-
-            <a href="#videos">Videos</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-    </nav>
-
-
-    <!-- HOME -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <h1>
-                Welcome to <span>YOYOAI</span> 🚀
-            </h1>
-
-            <p>
-                Discover amazing facts, science, technology
-                and interesting knowledge with YOYOAI.
-            </p>
-
-            <a href="#videos" class="button">
-                Explore Now
+            <a href="#home" class="logo">
+                Gyaniram <span>& Sons</span>
             </a>
 
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#sell-drum">Sell Drum</a>
+                <a href="#payment">Payment</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <div class="small-badge">
+                    Poultry Farm Supplies
+                </div>
+
+                <h1>
+                    Quality Products
+                    <span>For Poultry Farms</span>
+                </h1>
+
+                <p>
+                    Gram-bhati, tarpaulin, poultry feeders,
+                    iron drums aur poultry farm ke useful products —
+                    sab ek hi jagah.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#products" class="btn btn-primary">
+                        Products Dekhein
+                    </a>
+
+                    <a href="#sell-drum" class="btn btn-outline">
+                        Drum Sell Karein
+                    </a>
+
+                </div>
+
+                <div class="delivery-note">
+                    🚚 All India Delivery Available
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="hero-icon">
+                    🏭
+                </div>
+
+                <h3>
+                    Gyaniram & Sons
+                </h3>
+
+                <p>
+                    Poultry farm ke liye useful
+                    products aur supplies.
+                </p>
+
+            </div>
+
         </div>
 
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- PRODUCTS -->
+    <section class="products-section" id="products">
 
-    <section class="section" id="about">
+        <div class="container">
 
-        <h2>About YOYOAI</h2>
+            <div class="section-heading">
 
-        <p class="section-intro">
-            YOYOAI is a platform where you can discover
-            interesting facts, science, technology and
-            amazing knowledge in a simple way.
-        </p>
+                <span>OUR PRODUCTS</span>
+
+                <h2>
+                    Hamare Products
+                </h2>
+
+                <p>
+                    Product select karein aur apni requirement ke according order inquiry bhejein.
+                </p>
+
+            </div>
+
+
+            <div class="product-grid">
+
+
+                <!-- GRAM BHATI -->
+                <div class="product-card">
+
+                    <div class="product-image gram">
+                        🏭
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-category">
+                            POULTRY EQUIPMENT
+                        </span>
+
+                        <h3>
+                            Gram-Bhati
+                        </h3>
+
+                        <p>
+                            New material aur purane iron drum
+                            se bani gram-bhati.
+                        </p>
+
+                        <a href="https://wa.me/918708098125?text=Namaste%20Gyaniram%20%26%20Sons%2C%20mujhe%20Gram-Bhati%20ke%20baare%20mein%20order%20inquiry%20karni%20hai." target="_blank" class="product-link">
+                            Order Inquiry →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TARPAULIN -->
+                <div class="product-card">
+
+                    <div class="product-image tarpaulin">
+                        🟫
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-category">
+                            TARPAULIN
+                        </span>
+
+                        <h3>
+                            Tarpaulin
+                        </h3>
+
+                        <p>
+                            Bori material aur plastic tarpaulin
+                            different sizes mein.
+                        </p>
+
+                        <a href="https://wa.me/918708098125?text=Namaste%20Gyaniram%20%26%20Sons%2C%20mujhe%20Tarpaulin%20ke%20baare%20mein%20order%20inquiry%20karni%20hai." target="_blank" class="product-link">
+                            Order Inquiry →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FEEDER -->
+                <div class="product-card">
+
+                    <div class="product-image feeder">
+                        🟥
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-category">
+                            POULTRY
+                        </span>
+
+                        <h3>
+                            Poultry Feeder
+                        </h3>
+
+                        <p>
+                            Poultry farms ke liye feeders
+                            different sizes mein.
+                        </p>
+
+                        <a href="https://wa.me/918708098125?text=Namaste%20Gyaniram%20%26%20Sons%2C%20mujhe%20Poultry%20Feeder%20ke%20baare%20mein%20order%20inquiry%20karni%20hai." target="_blank" class="product-link">
+                            Order Inquiry →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DRUM -->
+                <div class="product-card">
+
+                    <div class="product-image drum">
+                        🛢️
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-category">
+                            IRON DRUM
+                        </span>
+
+                        <h3>
+                            Iron Drum
+                        </h3>
+
+                        <p>
+                            Different sizes aur requirements
+                            ke according iron drums.
+                        </p>
+
+                        <a href="https://wa.me/918708098125?text=Namaste%20Gyaniram%20%26%20Sons%2C%20mujhe%20Iron%20Drum%20ke%20baare%20mein%20order%20inquiry%20karni%20hai." target="_blank" class="product-link">
+                            Order Inquiry →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
 
-    <!-- VIDEOS -->
+    <!-- WHY US -->
+    <section class="why-section">
 
-    <section class="section" id="videos">
+        <div class="container">
 
-        <h2>Our Videos 🎥</h2>
+            <div class="section-heading">
 
-        <p class="section-intro">
-            Explore our latest science, technology and amazing fact videos.
-        </p>
+                <span>WHY Gyaniram & Sons</span>
 
-
-        <div class="video-container">
-
-
-            <!-- CARD 1 -->
-
-            <div class="video-card">
-
-                <div class="video-image">
-                    <img src="https://img.youtube.com/vi/SuuAYNn78rc/hqdefault.jpg" alt="Amazing Science Facts" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
-                </div>
-
-                <h3>
-                    Amazing Science Facts
-                </h3>
-
-                <p>
-                    Discover interesting facts about
-                    science and the world.
-                </p>
-
-                <a href="https://youtu.be/SuuAYNn78rc?si=V8QZ_m-eADxLgUus" class="watch-button">
-                    Watch Video
-                </a>
+                <h2>
+                    Business Ke Liye Simple & Reliable
+                </h2>
 
             </div>
 
 
-            <!-- CARD 2 -->
+            <div class="why-grid">
 
-            <div class="video-card">
-
-                <div class="video-image">
-                    <img src="https://img.youtube.com/vi/q7Ey4uFuVJw/hqdefault.jpg" alt="Future Technology" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+                <div class="why-card">
+                    <div>🇮🇳</div>
+                    <h3>All India Delivery</h3>
+                    <p>
+                        India ke different locations par
+                        delivery available.
+                    </p>
                 </div>
 
-                <h3>
-                    Future Technology
-                </h3>
 
-                <p>
-                    Learn about amazing technologies
-                    changing our future.
-                </p>
-
-                <a href="https://youtu.be/bUk1YcCPfpQ?si=2tmlJIdmvmFR48xY" class="watch-button">
-                    Watch Video
-                </a>
-
-            </div>
-
-
-            <!-- CARD 3 -->
-
-            <div class="video-card">
-
-                <div class="video-image">
-                    <img src="https://img.youtube.com/vi/bUk1YcCPfpQ/hqdefault.jpg" alt="Amazing World" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+                <div class="why-card">
+                    <div>📦</div>
+                    <h3>Bulk Orders</h3>
+                    <p>
+                        Poultry farms aur dealers ke liye
+                        bulk quantity inquiry.
+                    </p>
                 </div>
 
-                <h3>
-                    Amazing World
-                </h3>
 
-                <p>
-                    Explore fascinating facts from
-                    around the world.
-                </p>
-
-                <a href="https://youtu.be/q7Ey4uFuVJw?si=_s1H8tKjH6VRMgbb" class="watch-button">
-                    Watch Video
-                </a>
+                <div class="why-card">
+                    <div>🤝</div>
+                    <h3>Direct Contact</h3>
+                    <p>
+                        Requirement ke liye directly
+                        business se contact karein.
+                    </p>
+                </div>
 
             </div>
-
 
         </div>
 
-    <section class="section" id="contact">
-    <h2>Contact Us 📩</h2>
+    </section>
 
-    <p class="section-intro">
-        Have a question or want to connect with YOYOAI? Send us a message!
-    </p>
 
-    <form class="contact-box" action="https://formspree.io/f/xyegjvdl" method="POST">
+    <!-- SELL DRUM -->
+    <section class="sell-section" id="sell-drum">
 
-        <input type="text" name="name" placeholder="Your Name" required>
+        <div class="container">
 
-        <input type="email" name="email" placeholder="Your Email" required>
+            <div class="sell-box">
 
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        
-    
-        <button class="contact-button" type="submit" id="sendButton">
-    Send Message 🚀
-</button>
-    </form>
+                <div class="sell-icon">
+                    🛢️
+                </div>
+
+                <div>
+
+                    <span class="product-category">
+                        SELL YOUR DRUM
+                    </span>
+
+                    <h2>
+                        Apna Iron Drum Humein Sell Karein
+                    </h2>
+
+                    <p>
+                        Agar aapke paas iron drums hain aur
+                        aap unhe sell karna chahte hain,
+                        to apni details submit karein.
+                    </p>
+
+                    <a href="https://wa.me/918708098125?text=Namaste%20Gyaniram%20%26%20Sons%2C%20mere%20paas%20Iron%20Drum%20hain%20aur%20main%20unhe%20sell%20karna%20chahta%20hoon.%20Mujhe%20details%20batani%20hain." target="_blank" class="btn btn-primary">
+                        Sell Drum Inquiry
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SELL FORM -->
+    <section class="form-section" id="sell-form">
+
+        <div class="container form-container">
+
+            <div class="section-heading">
+
+                <span>DRUM SELL REQUEST</span>
+
+                <h2>
+                    Drum Sell Karne Ki Details
+                </h2>
+
+                <p>
+                    Ye form baad mein hum proper online system
+                    se connect karenge.
+                </p>
+
+            </div>
+
+
+            <form id="sellDrumForm" class="business-form">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Seller Name</label>
+                        <input type="text" placeholder="Apna naam">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" placeholder="Mobile number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" placeholder="State">
+                    </div>
+
+                    <div class="form-group">
+                        <label>City / Village</label>
+                        <input type="text" placeholder="City ya village">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Drum Quantity</label>
+                        <input type="number" placeholder="Kitne drum hain?">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Expected Price Per Drum</label>
+                        <input type="number" placeholder="₹ per drum">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Drum Size / Capacity</label>
+                        <input type="text" placeholder="Example: 200 litre">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Drum Condition</label>
+
+                        <select>
+                            <option>Select condition</option>
+                            <option>New</option>
+                            <option>Good</option>
+                            <option>Used</option>
+                            <option>Damaged</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Extra Information</label>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Drum ke baare mein aur kuch batana ho to yahan likhein..."
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary form-button">
+                    Submit Drum Inquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORDER -->
+    <section class="order-section" id="order">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>PRODUCT ORDER</span>
+
+                <h2>
+                    Product Order Karein
+                </h2>
+
+                <p>
+                    Size, quantity aur price ke options
+                    hum next step mein add karenge.
+                </p>
+
+            </div>
+
+
+            <div class="order-box">
+
+                <div class="order-icon">
+                    📦
+                </div>
+
+                <h3>
+                    Online Order System
+                </h3>
+
+                <p>
+                    Customer product, size, quantity,
+                    address aur contact details submit kar sakega.
+                </p>
+
+            <a href="https://wa.me/918708098125?text=Namaste%20Gyaniram%20%26%20Sons%2C%20mujhe%20poultry%20products%20ke%20baare%20mein%20order%20karna%20hai." target="_blank" class="btn btn-primary">
+                 Order Start Karein
+            </a>
+                
+
+            </div>
+
+        </div>
+
+    </section>
+     
+    <!-- PAYMENT -->
+<section class="payment-section" id="payment">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>MAKE PAYMENT</span>
+
+            <h2>
+                Payment Karein
+            </h2>
+
+            <p>
+                Payment karne ke liye neeche button par click karein.
+            </p>
+
+        </div>
+
+        <div class="payment-box">
+
+            <div class="payment-icon">
+                💳
+            </div>
+
+            <h3>
+                Online Payment
+            </h3>
+
+            <p>
+                UPI se payment karne ke liye payment details dekhein.
+            </p>
+
+            <button
+                type="button"
+                class="btn btn-primary form-button"
+                id="paymentButton">
+                Payment Karein →
+            </button>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-    <!-- FOOTER -->
+<!-- PAYMENT POPUP -->
+<div class="payment-modal" id="paymentModal">
 
+    <div class="payment-modal-box">
+
+        <button
+            type="button"
+            class="payment-close"
+            id="paymentClose">
+            ×
+        </button>
+
+        <div class="payment-icon">
+            💳
+        </div>
+
+        <h3>
+         Gyaniram & Sons  
+        </h3>
+
+        <p>
+            Neeche diye gaye UPI number par payment karein.
+        </p>
+
+        <div class="upi-number-box">
+
+            <span>UPI Number</span>
+
+            <strong>
+                8708098125
+            </strong>
+
+        </div>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            id="copyUpiNumber">
+            📋 Number Copy Karein
+        </button>
+
+        <p class="payment-note">
+            Apna UPI app kholkar is number par payment karein.
+        </p>
+
+    </div>
+
+</div>
+<!-- CONTACT -->
+ <section class="contact-section" id="contact">
+
+        <div class="container contact-container">
+
+            <div>
+
+                <span class="product-category">
+                    CONTACT US
+                </span>
+
+                <h2>
+                    Gyaniram & Sons
+                </h2>
+
+                <p>
+                    Product order, bulk inquiry ya drum selling
+                    ke liye humse contact karein.
+                </p>
+
+            </div>
+
+
+            <div class="contact-buttons">
+
+                <a href="https://wa.me/918708098125" target="_blank" class="contact-btn whatsapp">
+                    💬 WhatsApp
+                </a>
+
+                <a href="tel:+918708098125" class="contact-btn call">
+                    📞 Call Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
     <footer>
 
-        © 2026 YOYOAI. All Rights Reserved.
+        <div class="container footer-content">
+
+            <div>
+                <strong>Gyaniram & Sons</strong>
+                <p>
+                    Poultry Farm Supplies
+                </p>
+            </div>
+
+            <p>
+                © 2026 Gyaniram & Sons. All Rights Reserved.
+            </p>
+
+        </div>
 
     </footer>
 
-<script>
-const contactForm = document.querySelector('.contact-box');
-const sendButton = document.getElementById('sendButton');
 
-contactForm.addEventListener('submit', function () {
-    sendButton.disabled = true;
-    sendButton.innerText = 'Sending... 🚀';
-});
-</script>
+    <script src="script.js"></script>
 
 </body>
 </html>

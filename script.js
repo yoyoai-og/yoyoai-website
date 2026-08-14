@@ -1,0 +1,130 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ==============================
+    // DRUM SELL FORM → WHATSAPP
+    // ==============================
+
+    const sellForm = document.getElementById("sellDrumForm");
+
+    if (sellForm) {
+
+        sellForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const inputs = sellForm.querySelectorAll("input");
+            const select = sellForm.querySelector("select");
+            const textarea = sellForm.querySelector("textarea");
+
+            const sellerName = inputs[0].value.trim();
+            const mobile = inputs[1].value.trim();
+            const state = inputs[2].value.trim();
+            const city = inputs[3].value.trim();
+            const quantity = inputs[4].value.trim();
+            const price = inputs[5].value.trim();
+            const size = inputs[6].value.trim();
+            const condition = select.value;
+            const extraInfo = textarea.value.trim();
+
+            const message = `Namaste Gyaniram & Sons,
+
+Mujhe Iron Drum sell karne ki inquiry karni hai.
+
+Seller Name: ${sellerName}
+Mobile Number: ${mobile}
+State: ${state}
+City / Village: ${city}
+Drum Quantity: ${quantity}
+Expected Price Per Drum: ₹${price}
+Drum Size / Capacity: ${size}
+Drum Condition: ${condition}
+Extra Information: ${extraInfo}`;
+
+            const whatsappURL =
+                "https://wa.me/918708098125?text=" +
+                encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank");
+
+        });
+
+    }
+
+
+    // ==============================
+    // PAYMENT POPUP
+    // ==============================
+
+    const paymentButton =
+        document.getElementById("paymentButton");
+
+    const paymentModal =
+        document.getElementById("paymentModal");
+
+    const paymentClose =
+        document.getElementById("paymentClose");
+
+    const copyUpiNumber =
+        document.getElementById("copyUpiNumber");
+
+
+    // OPEN PAYMENT POPUP
+
+    if (paymentButton && paymentModal) {
+
+        paymentButton.addEventListener("click", function () {
+
+            paymentModal.style.display = "flex";
+
+        });
+
+    }
+
+
+    // CLOSE PAYMENT POPUP
+
+    if (paymentClose && paymentModal) {
+
+        paymentClose.addEventListener("click", function () {
+
+            paymentModal.style.display = "none";
+
+        });
+
+    }
+     if (paymentModal) {
+
+    paymentModal.addEventListener("click", function (event) {
+
+        if (event.target === paymentModal) {
+
+            paymentModal.style.display = "none";
+
+        }
+
+    });
+
+}
+
+    // COPY UPI NUMBER
+
+    if (copyUpiNumber) {
+
+        copyUpiNumber.addEventListener("click", function () {
+
+            navigator.clipboard.writeText("8708098125");
+
+            copyUpiNumber.textContent = "✅ Number Copied";
+
+            setTimeout(function () {
+
+                copyUpiNumber.textContent =
+                    "📋 Number Copy Karein";
+
+            }, 2000);
+
+        });
+
+    }
+
+});
