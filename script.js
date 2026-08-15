@@ -167,14 +167,196 @@ function openWhyPopup(type) {
 function openProductPopup(product) {
 
     let title = "";
-    let description = "";
-    let whatsappMessage = "";
+    let material = "";
+    let size = "";
+    let price = "";
 
     if (product === "gram") {
         title = "🏭 Gram-Bhati";
-        description = "Gram-Bhati ke baare mein details ke liye neeche options dekhein.";
-        whatsappMessage = "Namaste Gyaniram & Sons, mujhe Gram-Bhati ke baare mein inquiry karni hai.";
+        material = "New material aur purane iron drum se available.";
+        size = "Different size aur requirement ke according.";
+        price = "Price quantity aur model ke according.";
     }
+
+    if (product === "tarpaulin") {
+        title = "🟫 Tarpaulin";
+        material = "Bori material aur plastic tarpaulin.";
+        size = "Different sizes available.";
+        price = "Price size aur quantity ke according.";
+    }
+
+    if (product === "feeder") {
+        title = "🟥 Poultry Feeder";
+        material = "Poultry farm use ke liye suitable material.";
+        size = "Different sizes available.";
+        price = "Price size aur quantity ke according.";
+    }
+
+    if (product === "drum") {
+        title = "🛢️ Iron Drum";
+        material = "Iron drum different conditions mein available.";
+        size = "Different sizes aur capacities available.";
+        price = "Price size, condition aur quantity ke according.";
+    }
+
+    let popup = document.createElement("div");
+
+    popup.innerHTML = `
+        <div style="
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.65);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:9999;
+            padding:20px;
+        ">
+
+            <div style="
+                background:white;
+                width:100%;
+                max-width:430px;
+                border-radius:18px;
+                padding:25px;
+                position:relative;
+                text-align:center;
+            ">
+
+                <button onclick="this.closest('div[style*=fixed]').remove()"
+                    style="
+                        position:absolute;
+                        right:15px;
+                        top:12px;
+                        border:none;
+                        background:none;
+                        font-size:25px;
+                        cursor:pointer;
+                    ">
+                    ×
+                </button>
+
+                <h2>${title}</h2>
+
+                <p>Product ki detail dekhne ke liye option select karein.</p>
+
+                <div style="
+                    display:grid;
+                    grid-template-columns:1fr 1fr;
+                    gap:12px;
+                    margin-top:20px;
+                ">
+
+                    <button onclick="showProductDetail('Price', '${price}', '${product}')">
+                        💰<br>Price
+                    </button>
+
+                    <button onclick="showProductDetail('Material', '${material}', '${product}')">
+                        🧱<br>Material
+                    </button>
+
+                    <button onclick="showProductDetail('Size / Capacity', '${size}', '${product}')">
+                        📏<br>Size
+                    </button>
+
+                    <button onclick="showProductDetail('Order / Availability', 'Product ki availability aur quantity ke liye humse WhatsApp par inquiry karein.', '${product}')">
+                        📦<br>Order
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+}
+
+
+function showProductDetail(title, detail, product) {
+
+    let message = "";
+
+    if (product === "gram") {
+        message = "Namaste Gyaniram & Sons, mujhe Gram-Bhati ke baare mein inquiry karni hai.";
+    }
+
+    if (product === "tarpaulin") {
+        message = "Namaste Gyaniram & Sons, mujhe Tarpaulin ke baare mein inquiry karni hai.";
+    }
+
+    if (product === "feeder") {
+        message = "Namaste Gyaniram & Sons, mujhe Poultry Feeder ke baare mein inquiry karni hai.";
+    }
+
+    if (product === "drum") {
+        message = "Namaste Gyaniram & Sons, mujhe Iron Drum ke baare mein inquiry karni hai.";
+    }
+
+    let popup = document.createElement("div");
+
+    popup.innerHTML = `
+        <div style="
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.65);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:10000;
+            padding:20px;
+        ">
+
+            <div style="
+                background:white;
+                width:100%;
+                max-width:400px;
+                border-radius:18px;
+                padding:25px;
+                text-align:center;
+            ">
+
+                <h2>${title}</h2>
+
+                <p style="margin:20px 0;">
+                    ${detail}
+                </p>
+
+                <a href="https://wa.me/918708098125?text=${encodeURIComponent(message)}"
+                   target="_blank"
+                   style="
+                       display:inline-block;
+                       background:#25D366;
+                       color:white;
+                       padding:12px 20px;
+                       border-radius:10px;
+                       text-decoration:none;
+                       font-weight:bold;
+                   ">
+                    🟢 WhatsApp par Inquiry Karein
+                </a>
+
+                <br><br>
+
+                <button onclick="this.closest('div[style*=fixed]').remove()"
+                    style="
+                        padding:9px 18px;
+                        border:1px solid #ccc;
+                        border-radius:8px;
+                        background:white;
+                        cursor:pointer;
+                    ">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+}
 
     if (product === "tarpaulin") {
         title = "🟫 Tarpaulin";
