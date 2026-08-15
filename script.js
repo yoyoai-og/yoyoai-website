@@ -128,3 +128,24 @@ Extra Information: ${extraInfo}`;
     }
 
 });
+function openWhyPopup(type) {
+    let title = "";
+    let message = "";
+
+    if (type === "delivery") {
+        title = "🇮🇳 All India Delivery";
+        message = "Gyaniram & Sons India ke different locations par poultry farm supplies ki delivery provide karta hai. Delivery availability location aur order quantity par depend karti hai.";
+    }
+
+    if (type === "bulk") {
+        title = "📦 Bulk Orders";
+        message = "Poultry farms, dealers aur businesses ke liye bulk quantity orders available hain. Apni requirement aur quantity ke liye directly humse contact karein.";
+    }
+
+    if (type === "contact") {
+        title = "🤝 Direct Contact";
+        message = "Product ki price, availability, quantity ya delivery ke baare mein information lene ke liye directly Gyaniram & Sons se contact karein.";
+    }
+
+    alert(title + "\n\n" + message);
+}
