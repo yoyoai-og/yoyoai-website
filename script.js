@@ -137,10 +137,12 @@ function openWhyPopup(type) {
 
     let title = "";
     let message = "";
+    let icon = "";
 
     if (type === "delivery") {
 
-        title = "🇮🇳 All India Delivery";
+        title = "All India Delivery";
+        icon = "🇮🇳";
 
         message =
             "Gyaniram & Sons India ke different locations par poultry farm supplies ki delivery provide karta hai.\n\nDelivery availability location aur order quantity par depend karti hai.";
@@ -150,7 +152,8 @@ function openWhyPopup(type) {
 
     if (type === "bulk") {
 
-        title = "📦 Bulk Orders";
+        title = "Bulk Orders";
+        icon = "📦";
 
         message =
             "Poultry farms, dealers aur businesses ke liye bulk quantity orders available hain.\n\nApni requirement aur quantity ke liye directly humse contact karein.";
@@ -160,7 +163,8 @@ function openWhyPopup(type) {
 
     if (type === "contact") {
 
-        title = "🤝 Direct Contact";
+        title = "Direct Contact";
+        icon = "🤝";
 
         message =
             "Product ki price, availability, quantity ya delivery ke baare mein information lene ke liye directly Gyaniram & Sons se contact karein.";
@@ -168,9 +172,65 @@ function openWhyPopup(type) {
     }
 
 
-    alert(title + "\n\n" + message);
+    let popup = document.createElement("div");
+
+    popup.innerHTML = `
+
+        <div class="product-popup-overlay">
+
+            <div class="product-detail-popup">
+
+                <button
+                    class="popup-close"
+                    onclick="this.closest('.product-popup-overlay').remove()">
+                    ×
+                </button>
+
+                <div class="popup-icon">
+                    ${icon}
+                </div>
+
+                <h2>
+                    ${title}
+                </h2>
+
+                <p class="detail-text">
+                    ${message.replace(/\n\n/g, "<br><br>")}
+                </p>
+
+                <a
+                    href="https://wa.me/918708098125?text=${encodeURIComponent(
+                        "Namaste Gyaniram & Sons, mujhe aapke business ke baare mein information chahiye."
+                    )}"
+                    target="_blank"
+                    class="whatsapp-button">
+
+                    🟢 Direct Contact Karein
+
+                </a>
+
+                <button
+                    class="back-button"
+                    onclick="this.closest('.product-popup-overlay').remove()">
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+    document.body.appendChild(popup);
 
 }
+
+
+// ==================================================
+// PRODUCT POPUP
+// ==================================================
 
 
 // ==================================================
