@@ -164,3 +164,51 @@ function openWhyPopup(type) {
     }
 
 }
+function openProductPopup(product) {
+
+    let title = "";
+    let description = "";
+    let whatsappMessage = "";
+
+    if (product === "gram") {
+        title = "🏭 Gram-Bhati";
+        description = "Gram-Bhati ke baare mein details ke liye neeche options dekhein.";
+        whatsappMessage = "Namaste Gyaniram & Sons, mujhe Gram-Bhati ke baare mein inquiry karni hai.";
+    }
+
+    if (product === "tarpaulin") {
+        title = "🟫 Tarpaulin";
+        description = "Tarpaulin ke baare mein details ke liye neeche options dekhein.";
+        whatsappMessage = "Namaste Gyaniram & Sons, mujhe Tarpaulin ke baare mein inquiry karni hai.";
+    }
+
+    if (product === "feeder") {
+        title = "🟥 Poultry Feeder";
+        description = "Poultry Feeder ke baare mein details ke liye neeche options dekhein.";
+        whatsappMessage = "Namaste Gyaniram & Sons, mujhe Poultry Feeder ke baare mein inquiry karni hai.";
+    }
+
+    if (product === "drum") {
+        title = "🛢️ Iron Drum";
+        description = "Iron Drum ke baare mein details ke liye neeche options dekhein.";
+        whatsappMessage = "Namaste Gyaniram & Sons, mujhe Iron Drum ke baare mein inquiry karni hai.";
+    }
+
+    alert(
+        title +
+        "\n\n" +
+        description +
+        "\n\n" +
+        "💰 Price\n" +
+        "🧱 Material\n" +
+        "📏 Size / Capacity\n" +
+        "📦 Order / Availability\n\n" +
+        "WhatsApp inquiry ke liye OK dabayein."
+    );
+
+    window.open(
+        "https://wa.me/918708098125?text=" +
+        encodeURIComponent(whatsappMessage),
+        "_blank"
+    );
+}
