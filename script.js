@@ -167,16 +167,188 @@ function openWhyPopup(type) {
 function openProductPopup(product) {
 
     let title = "";
-    let material = "";
-    let size = "";
-    let price = "";
+    let details = {};
 
     if (product === "gram") {
         title = "🏭 Gram-Bhati";
-        material = "New material aur purane iron drum se available.";
-        size = "Different size aur requirement ke according.";
-        price = "Price quantity aur model ke according.";
+        details = {
+            price: "Price quantity aur model ke according available hai.",
+            material: "New material aur purane iron drum se bani gram-bhati available hai.",
+            size: "Different sizes aur requirements ke according.",
+            order: "Availability aur order quantity ke liye inquiry karein."
+        };
     }
+
+    if (product === "tarpaulin") {
+        title = "🟫 Tarpaulin";
+        details = {
+            price: "Price size aur quantity ke according available hai.",
+            material: "Bori material aur plastic tarpaulin available hai.",
+            size: "Different sizes available hain.",
+            order: "Available size aur quantity ke liye inquiry karein."
+        };
+    }
+
+    if (product === "feeder") {
+        title = "🟥 Poultry Feeder";
+        details = {
+            price: "Price size aur quantity ke according available hai.",
+            material: "Poultry farm use ke liye suitable material.",
+            size: "Different sizes available hain.",
+            order: "Availability aur quantity ke liye inquiry karein."
+        };
+    }
+
+    if (product === "drum") {
+        title = "🛢️ Iron Drum";
+        details = {
+            price: "Price size, condition aur quantity ke according.",
+            material: "Different condition ke iron drums available hain.",
+            size: "Different sizes aur capacities available hain.",
+            order: "Available drums aur quantity ke liye inquiry karein."
+        };
+    }
+
+    let popup = document.createElement("div");
+
+    popup.innerHTML = `
+        <div class="product-popup-overlay">
+
+            <div class="product-popup">
+
+                <button class="popup-close"
+                    onclick="this.closest('.product-popup-overlay').remove()">
+                    ×
+                </button>
+
+                <div class="popup-icon">📦</div>
+
+                <h2>${title}</h2>
+
+                <p class="popup-subtitle">
+                    Product ki detail dekhne ke liye option select karein.
+                </p>
+
+                <div class="popup-options">
+
+                    <button onclick="showProductDetail('${product}', 'price')">
+                        <span>💰</span>
+                        <strong>Price</strong>
+                        <small>Price details</small>
+                    </button>
+
+                    <button onclick="showProductDetail('${product}', 'material')">
+                        <span>🧱</span>
+                        <strong>Material</strong>
+                        <small>Material details</small>
+                    </button>
+
+                    <button onclick="showProductDetail('${product}', 'size')">
+                        <span>📏</span>
+                        <strong>Size</strong>
+                        <small>Size / Capacity</small>
+                    </button>
+
+                    <button onclick="showProductDetail('${product}', 'order')">
+                        <span>📦</span>
+                        <strong>Order</strong>
+                        <small>Availability</small>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    window.productDetails = details;
+}
+
+
+function showProductDetail(product, type) {
+
+    let details = window.productDetails;
+
+    let title = "";
+    let detail = "";
+
+    if (type === "price") {
+        title = "💰 Price";
+        detail = details.price;
+    }
+
+    if (type === "material") {
+        title = "🧱 Material";
+        detail = details.material;
+    }
+
+    if (type === "size") {
+        title = "📏 Size / Capacity";
+        detail = details.size;
+    }
+
+    if (type === "order") {
+        title = "📦 Order / Availability";
+        detail = details.order;
+    }
+
+    let productName = "";
+
+    if (product === "gram") productName = "Gram-Bhati";
+    if (product === "tarpaulin") productName = "Tarpaulin";
+    if (product === "feeder") productName = "Poultry Feeder";
+    if (product === "drum") productName = "Iron Drum";
+
+    let message =
+        "Namaste Gyaniram & Sons, mujhe " +
+        productName +
+        " ke " +
+        title.replace(/[^a-zA-Z ]/g, "") +
+        " ke baare mein inquiry karni hai.";
+
+    let popup = document.createElement("div");
+
+    popup.innerHTML = `
+        <div class="product-popup-overlay">
+
+            <div class="product-detail-popup">
+
+                <button class="popup-close"
+                    onclick="this.closest('.product-popup-overlay').remove()">
+                    ×
+                </button>
+
+                <div class="popup-icon">📋</div>
+
+                <h2>${title}</h2>
+
+                <p class="detail-text">
+                    ${detail}
+                </p>
+
+                <a
+                    href="https://wa.me/918708098125?text=${encodeURIComponent(message)}"
+                    target="_blank"
+                    class="whatsapp-button">
+                    🟢 WhatsApp par Inquiry Karein
+                </a>
+
+                <button
+                    class="back-button"
+                    onclick="this.closest('.product-popup-overlay').remove()">
+                    ← Back
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+}
 
     if (product === "tarpaulin") {
         title = "🟫 Tarpaulin";
